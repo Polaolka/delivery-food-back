@@ -1,7 +1,8 @@
 const { Food } = require("../../models/food");
 
 const getAll = async (req, res) => {
-  const { shop_owner_food } = req.body;
+  console.log(req.query);
+  const { shop_owner_food } = req.query;
   const conditions = {};
   if (shop_owner_food !== undefined) conditions.shop_owner_food = shop_owner_food;
   const { page = 1, limit = 6 } = req.query;
