@@ -29,11 +29,7 @@ const register = async (req, res) => {
 
   // await sendEmail(verifyEm);
   
-  res.status(201).json({
-    user: {
-      email: newUser.email,
-    },
-  });
+  res.status(201).json(newUser);
 };
 
 module.exports = register;

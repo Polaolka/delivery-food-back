@@ -6,11 +6,11 @@ const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 const orderSchema = new Schema(
   {
-      owner_id: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-        required: true,
-      },
+    owner_id: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
     shop: {
       type: Schema.Types.ObjectId,
       ref: "Shop",
@@ -35,7 +35,7 @@ const orderSchema = new Schema(
 orderSchema.post("save", handleMongooseError);
 
 const addOrderSchema = Joi.object({
-    owner_id: Joi.string().required().trim(),
+  owner_id: Joi.string().required().trim(),
   shop: Joi.string().required().trim(),
   products: Joi.array()
     .items(
