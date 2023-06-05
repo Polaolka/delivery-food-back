@@ -35,8 +35,8 @@ const orderSchema = new Schema(
 orderSchema.post("save", handleMongooseError);
 
 const addOrderSchema = Joi.object({
-  owner_id: Joi.string().required().trim(),
-  shop: Joi.string().required().trim(),
+  owner_id: Joi.string().required(),
+  shop: Joi.string().required(),
   products: Joi.array()
     .items(
       Joi.object({

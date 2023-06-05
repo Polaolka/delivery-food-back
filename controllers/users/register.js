@@ -10,11 +10,11 @@ const { BASE_URL } = process.env;
 const register = async (req, res) => {
   const { email, phone, address, name } = req.body;
 
-  const user = await User.findOne({ email });
+  // const user = await User.findOne({ email });
 
-  if (user) {
-    throw RequestError(409, "Email already in use");
-  }
+  // if (user) {
+  //   throw RequestError(409, "Email already in use");
+  // }
 
   // const verificationToken = nanoid();
 
